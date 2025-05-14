@@ -1,0 +1,9 @@
+{
+    "{src,test}/**/*.{ts,tsx,js,jsx}": [
+        "npm run eslint:lint", 
+        "npm run eslint:fix"
+    ],
+    "*.{ts,tsx,js,jsx}": [
+        "npm run prettier:format"
+    ]
+}

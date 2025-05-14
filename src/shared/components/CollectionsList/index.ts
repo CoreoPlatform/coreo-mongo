@@ -1,1 +1,1 @@
-export * from '@/shared/components/CollectionsList';
+export * from "@/shared/components/CollectionsList";

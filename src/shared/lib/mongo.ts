@@ -1,22 +1,21 @@
-
 /**
  * CoreoMongo - Open source self-hosted web-based MongoDB GUI for exploring
  * and managing your databases.
- * 
+ *
  * Copyright (c) CoreoPlatform.
- * 
- * 
+ *
+ *
  * For full copyright and license information, please see the LICENSE.md
- * 
+ *
  * @copyright       Copyright (c) CoreoPlatform.
- * @license         
+ * @license
  * @since           1.0.0
  */
 
 import { Db, MongoClient } from "mongodb";
 
 /**
- * 
+ *
  */
 class MongoConnection {
     //
@@ -24,7 +23,7 @@ class MongoConnection {
 
     //
     private db: Db | null = null;
-    
+
     //
     public databaseName: string;
 
@@ -34,8 +33,8 @@ class MongoConnection {
     }
 
     /**
-     * 
-     * @returns 
+     *
+     * @returns
      */
     public async connect(): Promise<Db> {
         if (!this.db) {
@@ -44,7 +43,9 @@ class MongoConnection {
                 this.db = this.client.db(this.databaseName);
                 return this.db;
             } catch (err: unknown) {
-                throw new Error(`MongoConnection was timeouted. Err: ${err as Error}`)
+                throw new Error(
+                    `MongoConnection was timeouted. Err: ${err as Error}`,
+                );
             }
         }
 
@@ -59,6 +60,6 @@ const MongoInstance = new MongoConnection(
 );
 
 /**
- * 
+ *
  */
 export { MongoInstance };
